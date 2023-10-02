@@ -30,6 +30,40 @@
 
 编译完成后镜像文件所在目录为output/image,可使用SocToolKit工具打开此目录进行烧录。
 
+# 开发板
+
+本仓库主要支持由[微雪电子(代理)](https://www.waveshare.net/)出品的luckfox-pico开发板,也可用于其它RV1103/RV1106主控的固件开发（需自行适配）。
+
+主要支持的开发板如下：
+
+- LuckFox Pico
+- LuckFox Pico Plus
+- LuckFox Pico Pro/Max
+
+## LuckFox Pico
+
+### 硬件
+
+Luckfox Pico是由微雪电子(代理)出品的RV1103开发板，其具有64M RAM。采用SD卡启动。
+
+![LUCKFOX-PICO-GPIO](doc/LUCKFOX-PICO-GPIO.jpg)
+
+## LuckFox Pico Plus
+
+### 硬件
+
+Luckfox Pico Plus是由微雪电子(代理)出品的RV1103开发板，其具有64M RAM及128M SPI-Nand。 
+
+![LUCKFOX-PICO-PLUS-GPIO](doc/LUCKFOX-PICO-PLUS-GPIO.jpg)
+
+## LuckFox Pico Pro/Max
+
+### 硬件
+
+Luckfox Pico Pro/Max是由微雪电子(代理)出品的RV1106开发板，其具有256M SPI-Nand。
+
+Luckfox Pico Pro具有128M RAM。Luckfox Pico Max具有256M RAM。
+
 # 烧录
 
 SocToolKit在[tools](tools)目录下。
