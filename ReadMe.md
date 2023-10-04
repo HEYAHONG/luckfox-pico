@@ -48,6 +48,14 @@ Luckfox Pico是由[微雪电子](https://www.waveshare.net/)(代理[Luckfox](htt
 
 ![LUCKFOX-PICO-GPIO](doc/LUCKFOX-PICO-GPIO.jpg)
 
+### 固件
+
+本仓库支持Luckfox Pico的板级配置如下：
+
+-  BoardConfig_IPC/BoardConfig-EMMC-NONE-RV1103_Luckfox_Pico-IPC.mk
+
+
+
 ## LuckFox Pico Plus
 
 ### 硬件
@@ -55,6 +63,14 @@ Luckfox Pico是由[微雪电子](https://www.waveshare.net/)(代理[Luckfox](htt
 Luckfox Pico Plus是由[微雪电子](https://www.waveshare.net/)(代理[Luckfox](https://www.luckfox.com))出品的RV1103开发板，其具有64M RAM及128M SPI-Nand。 
 
 ![LUCKFOX-PICO-PLUS-GPIO](doc/LUCKFOX-PICO-PLUS-GPIO.jpg)
+
+
+
+### 固件
+
+本仓库支持Luckfox Pico Plus的板级配置如下：
+
+-  BoardConfig_IPC/BoardConfig-SPI_NAND-NONE-RV1103_Luckfox_Pico_Plus-IPC.mk
 
 
 
@@ -67,6 +83,14 @@ Luckfox Pico Pro/Max是由[微雪电子](https://www.waveshare.net/)(代理[Luck
 Luckfox Pico Pro具有128M RAM。Luckfox Pico Max具有256M RAM。
 
 ![LUCKFOX-PICO-PRO-GPIO](doc/LUCKFOX-PICO-PRO-GPIO.png)
+
+### 固件
+
+本仓库支持Luckfox Pico Pro/Max的板级配置如下：
+
+- BoardConfig_IPC/BoardConfig-SPI_NAND-NONE-RV1106_Luckfox_Pico_Max-IPC.mk
+
+
 
 # 烧录
 
