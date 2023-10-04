@@ -32,7 +32,7 @@
 
 # 开发板
 
-本仓库主要支持由[微雪电子(代理)](https://www.waveshare.net/)出品的luckfox-pico开发板,也可用于其它RV1103/RV1106主控的固件开发（需自行适配）。
+本仓库主要支持由[微雪电子](https://www.waveshare.net/)(代理[Luckfox](https://www.luckfox.com))出品的luckfox-pico开发板,也可用于其它RV1103/RV1106主控的固件开发（需自行适配）。
 
 主要支持的开发板如下：
 
@@ -44,7 +44,7 @@
 
 ### 硬件
 
-Luckfox Pico是由微雪电子(代理)出品的RV1103开发板，其具有64M RAM。采用SD卡启动。
+Luckfox Pico是由[微雪电子](https://www.waveshare.net/)(代理[Luckfox](https://www.luckfox.com))出品的RV1103开发板，其具有64M RAM。采用SD卡启动。
 
 ![LUCKFOX-PICO-GPIO](doc/LUCKFOX-PICO-GPIO.jpg)
 
@@ -52,7 +52,7 @@ Luckfox Pico是由微雪电子(代理)出品的RV1103开发板，其具有64M RA
 
 ### 硬件
 
-Luckfox Pico Plus是由微雪电子(代理)出品的RV1103开发板，其具有64M RAM及128M SPI-Nand。 
+Luckfox Pico Plus是由[微雪电子](https://www.waveshare.net/)(代理[Luckfox](https://www.luckfox.com))出品的RV1103开发板，其具有64M RAM及128M SPI-Nand。 
 
 ![LUCKFOX-PICO-PLUS-GPIO](doc/LUCKFOX-PICO-PLUS-GPIO.jpg)
 
@@ -60,7 +60,7 @@ Luckfox Pico Plus是由微雪电子(代理)出品的RV1103开发板，其具有6
 
 ### 硬件
 
-Luckfox Pico Pro/Max是由微雪电子(代理)出品的RV1106开发板，其具有256M SPI-Nand。
+Luckfox Pico Pro/Max是由[微雪电子](https://www.waveshare.net/)(代理[Luckfox](https://www.luckfox.com))出品的RV1106开发板，其具有256M SPI-Nand。
 
 Luckfox Pico Pro具有128M RAM。Luckfox Pico Max具有256M RAM。
 
