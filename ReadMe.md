@@ -56,6 +56,8 @@ Luckfox Pico Plus是由[微雪电子](https://www.waveshare.net/)(代理[Luckfox
 
 ![LUCKFOX-PICO-PLUS-GPIO](doc/LUCKFOX-PICO-PLUS-GPIO.jpg)
 
+
+
 ## LuckFox Pico Pro/Max
 
 ### 硬件
@@ -63,6 +65,8 @@ Luckfox Pico Plus是由[微雪电子](https://www.waveshare.net/)(代理[Luckfox
 Luckfox Pico Pro/Max是由[微雪电子](https://www.waveshare.net/)(代理[Luckfox](https://www.luckfox.com))出品的RV1106开发板，其具有256M SPI-Nand。
 
 Luckfox Pico Pro具有128M RAM。Luckfox Pico Max具有256M RAM。
+
+![LUCKFOX-PICO-PRO-GPIO](doc/LUCKFOX-PICO-PRO-GPIO.png)
 
 # 烧录
 
