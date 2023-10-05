@@ -168,7 +168,7 @@ PWM，全称为脉冲宽度调制（Pulse Width Modulation），是一种通过�
 
 ### ADC
 
-模数转换器在Linux上输于IIO（Industrial I/O）子系统，可通过sysfs访问ADC，路径为/sys/bus/iio/devices/
+模数转换器在Linux上属于IIO（Industrial I/O）子系统，可通过sysfs访问ADC，路径为/sys/bus/iio/devices/
 
 ### I2C
 
