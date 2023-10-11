@@ -275,11 +275,11 @@ RockChip ubifs文件系统压缩设置。
 
 ### RK_APP_TYPE
 
-RockChip  APP类型。
+RockChip  APP类型。APP类型的配置的使用可参见[project/app/rkipc/Makefile](project/app/rkipc/Makefile)。
 
 ### RK_APP_IPCWEB_BACKEND
 
-RockChip  APP IPC web后台。
+RockChip  APP IPC web后台。APP IPC web后台配置的使用可参见[project/app/ipcweb/Makefile](project/app/ipcweb/Makefile)。
 
 ### RK_BUILD_APP_TO_OEM_PARTITION
 
