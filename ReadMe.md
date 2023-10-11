@@ -54,7 +54,7 @@ Luckfox Pico是由[微雪电子](https://www.waveshare.net/)(代理[Luckfox](htt
 
 本仓库支持Luckfox Pico的板级配置如下：
 
--  BoardConfig_IPC/BoardConfig-EMMC-NONE-RV1103_Luckfox_Pico-IPC.mk
+-  BoardConfig-EMMC-NONE-RV1103_Luckfox_Pico-IPC.mk
 
 
 
@@ -72,7 +72,7 @@ Luckfox Pico Plus是由[微雪电子](https://www.waveshare.net/)(代理[Luckfox
 
 本仓库支持Luckfox Pico Plus的板级配置如下：
 
--  BoardConfig_IPC/BoardConfig-SPI_NAND-NONE-RV1103_Luckfox_Pico_Plus-IPC.mk
+-  BoardConfig-SPI_NAND-NONE-RV1103_Luckfox_Pico_Plus-IPC.mk
 
 
 
@@ -90,17 +90,19 @@ Luckfox Pico Pro具有128M RAM。Luckfox Pico Max具有256M RAM。
 
 本仓库支持Luckfox Pico Pro/Max的板级配置如下：
 
-- BoardConfig_IPC/BoardConfig-SPI_NAND-NONE-RV1106_Luckfox_Pico_Max-IPC.mk
+- BoardConfig-SPI_NAND-NONE-RV1106_Luckfox_Pico_Max-IPC.mk
 
 
 
 # 外设
 
-在本仓库中外设主要指开发板的外设接口或者外设设备。详细的教程请访问官方wiki。
+在本仓库中外设主要指开发板的外设接口或者外设设备。详细的教程请访问[官方wiki](https://wiki.luckfox.com/zh/Luckfox-Pico/Luckfox-Pico-GPIO)。
 
 ## 固定外设
 
-固定外设主要指开发板上未使用引脚引出的外设，如采用专用接口的外设。在设计自己的PCB板时，应尽量避免改变固定外设的用途（在SDK开发过程中会参考固定外设的接口，厂家可能已经分配了用途。）。
+固定外设主要指开发板上未使用引脚引出的外设，如采用专用接口的外设。
+
+在设计自己的PCB板时，应尽量避免改变固定外设的用途（在SDK开发过程中会参考固定外设的接口，厂家可能已经分配了用途。）。
 
 ### 按键
 
