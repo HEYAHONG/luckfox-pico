@@ -197,7 +197,97 @@ SPI作为一种总线，可连接多种外设。与I2C不同，无论是否挂�
 - sysfs接口：/sys/class/spi_master` 和 `/sys/bus/spi/devices
 - 设备文件接口:/dev/spidevX.Y，其中X表示 SPI 总线编号，Y表示 SPI 设备编号(通常等效于CS片选的编号，如SPI0使用CS0的设备文件名为/dev/spidev0.0)。
 
+# 板级配置
 
+板级配置的说明见官方原说明，配置所在目录为[project/cfg/BoardConfig_IPC/](project/cfg/BoardConfig_IPC/)。
+
+现有如下配置：
+
+- BoardConfig-EMMC-NONE-RV1103_Luckfox_Pico-IPC.mk:适用于Luckfox Pico开发板及其兼容开发板。  
+- BoardConfig-SPI_NAND-NONE-RV1103_Luckfox_Pico_Plus-IPC.mk:适用于Luckfox Pico Plus开发板及其兼容开发板。  
+- BoardConfig-SPI_NAND-NONE-RV1106_Luckfox_Pico_Max-IPC.mk:适用于Luckfox Pico Pro/Max开发板及其兼容开发板。
+
+## 配置项
+
+### RK_ARCH
+
+RockChip架构，本仓库固定为arm。
+
+### RK_CHIP
+
+RockChip架构，本仓库固定为rv1106(无论是RV1103还是RV1106均使用rv1106作为代号)。
+
+### RK_TOOLCHAIN_CROSS
+
+RockChip交叉编译工具链，由于本仓库包含交叉编译工具链，故此为固定值(arm-rockchip830-linux-uclibcgnueabihf)。
+
+### RK_BOOT_MEDIUM
+
+RockChip启动介质，可选项为emmc/spi_nor/spi_nand。Luckfox Pico根据配置的不同可选emmc与spi_nand。
+
+### RK_UBOOT_DEFCONFIG
+
+RockChip Uboot的默认Kconfig配置文件名。Uboot源代码目录为[sysdrv/source/uboot/u-boot/](sysdrv/source/uboot/u-boot/)，Uboot的Kconfig默认配置目录为[sysdrv/source/uboot/u-boot/configs/](sysdrv/source/uboot/u-boot/configs/)。
+
+### RK_UBOOT_DEFCONFIG_FRAGMENT
+
+RockChip Uboot的默认Kconfig配置文件名(分片)，通常用于配置启动介质。Uboot源代码目录为[sysdrv/source/uboot/u-boot/](sysdrv/source/uboot/u-boot/)，Uboot的Kconfig默认配置目录为[sysdrv/source/uboot/u-boot/configs/](sysdrv/source/uboot/u-boot/configs/)。
+
+### RK_KERNEL_DEFCONFIG
+
+RockChip Linux内核默认Kconfig配置文件名。Linux源代码目录为[sysdrv/source/kernel/](sysdrv/source/kernel/)，本仓库默认Kconfig配置文件目录为[sysdrv/source/kernel/arch/arm/configs/](sysdrv/source/kernel/arch/arm/configs/)。
+
+### RK_KERNEL_DTS
+
+RockChip Linux内核的设备树文件名。Linux源代码目录为[sysdrv/source/kernel/](sysdrv/source/kernel/)，本仓库设备树目录为[sysdrv/source/kernel/arch/arm/boot/dts/](sysdrv/source/kernel/arch/arm/boot/dts/)。
+
+### RK_MISC
+
+RockChip杂项镜像。
+
+### RK_CAMERA_SENSOR_IQFILES
+
+RockChip摄像头传感器IO文件。
+
+### RK_CAMERA_SENSOR_CAC_BIN
+
+RockChip摄像头传感器CAC校准文件。
+
+### RK_BOOTARGS_CMA_SIZE
+
+RockChip CMA大小配置，注意：默认情况下用户空间不可使用CMA内存，CMA内存专用于内核空间，在本仓库主要用于摄像头等。
+
+### RK_PARTITION_CMD_IN_ENV
+
+RockChip 分区设置。分区设置存储在Env分区。
+
+### RK_PARTITION_FS_TYPE_CFG
+
+RockChip 文件系统设置。设置文件系统类型及挂载信息。
+
+### RK_SQUASHFS_COMP
+
+RockChip squashfs文件系统压缩设置。
+
+### RK_UBIFS_COMP
+
+RockChip ubifs文件系统压缩设置。
+
+### RK_APP_TYPE
+
+RockChip  APP类型。
+
+### RK_APP_IPCWEB_BACKEND
+
+RockChip  APP IPC web后台。
+
+### RK_BUILD_APP_TO_OEM_PARTITION
+
+RockChip  将APP安装至OEM分区
+
+### RK_ENABLE_ROCKCHIP_TEST
+
+RockChip 测试项
 
 # 烧录
 
