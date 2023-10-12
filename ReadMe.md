@@ -273,7 +273,9 @@ Luckfox提供的库：
 
 板级配置的说明见官方原说明，配置所在目录为[project/cfg/BoardConfig_IPC/](project/cfg/BoardConfig_IPC/)。
 
-现有如下配置：
+本仓库采用make作为主要的构建工具，其配置通过Makefile变量进行配置。
+
+现有如下配置文件：
 
 - BoardConfig-EMMC-NONE-RV1103_Luckfox_Pico-IPC.mk:适用于Luckfox Pico开发板及其兼容开发板。  
 - BoardConfig-SPI_NAND-NONE-RV1103_Luckfox_Pico_Plus-IPC.mk:适用于Luckfox Pico Plus开发板及其兼容开发板。  
@@ -359,7 +361,7 @@ RockChip  将APP安装至OEM分区
 
 ### RK_ENABLE_ROCKCHIP_TEST
 
-RockChip 测试项
+RockChip rockchip_test(其源代码目录为[sysdrv/tools/board/rockchip_test/](sysdrv/tools/board/rockchip_test/))
 
 # 烧录
 
