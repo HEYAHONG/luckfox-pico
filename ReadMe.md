@@ -9,6 +9,16 @@
 
 官方WIKI：https://wiki.luckfox.com/zh/Luckfox-Pico/Luckfox-Pico-quick-start
 
+## 目录
+
+| 路径                         | 说明                                                     |
+| ---------------------------- | -------------------------------------------------------- |
+| [media/](media/)             | Rockchip media库目录，所有与库相关的源代码存放至此目录。 |
+| [project/app/](project/app/) | App目录，所有应用相关源代码存放至此目录。                |
+| [sysdrv/](sysdrv/)           | 系统目录，包含uboot、linux kernel、rootfs的源代码。      |
+
+对于Rockchip media库目录与App目录而言，当其下的目录包含Makefile时会自动进行构建，无需修改其它文件。因此，如要添加一个新的库或者应用，只需要在相应的目录下创建一个子目录并仿造其它库或者应用编写Makefile即可。
+
 ## 编译
 
 简易编译步骤如下：
