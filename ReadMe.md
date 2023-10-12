@@ -98,6 +98,8 @@ Luckfox Pico Pro具有128M RAM。Luckfox Pico Max具有256M RAM。
 
 在本仓库中外设主要指开发板的外设接口或者外设设备。详细的教程请访问[官方wiki](https://wiki.luckfox.com/zh/Luckfox-Pico/Luckfox-Pico-GPIO)。
 
+Luckfox提供的外设操作库（封装一些操作,也可使用脚本操作外设）目录：[media/luckfox/](media/luckfox/)。
+
 ## 固定外设
 
 固定外设主要指开发板上未使用引脚引出的外设，如采用专用接口的外设。
@@ -156,11 +158,31 @@ SPI-NAND挂接在一个支持Quad-SPI的SPI接口，占用六个IO（不包括�
 
 注意：只能使用引脚未被配置为其它非GPIO功能的引脚，否则可能无效或出现冲突。
 
+Luckfox提供的库：
+
+| 名称        | 路径                                                         |
+| ----------- | ------------------------------------------------------------ |
+| 头文件      | [media/luckfox/include/luckfox_gpio.h](media/luckfox/include/luckfox_gpio.h) |
+| C源代码库   | [media/luckfox/src/luckfox_gpio.c](media/luckfox/src/luckfox_gpio.c) |
+| C源代码示例 | [media/luckfox/examples/luckfox_gpio_test.c](media/luckfox/examples/luckfox_gpio_test.c) |
+
+
+
 ### PWM
 
 PWM，全称为脉冲宽度调制（Pulse Width Modulation），是一种通过控制信号的脉冲宽度来实现模拟信号输出的技术。
 
 在Linux可通过sysfs访问PWM,路径为/sys/class/pwm。
+
+Luckfox提供的库：
+
+| 名称        | 路径                                                         |
+| ----------- | ------------------------------------------------------------ |
+| 头文件      | [media/luckfox/include/luckfox_pwm.h](media/luckfox/include/luckfox_pwm.h) |
+| C源代码库   | [media/luckfox/src/luckfox_pwm.c](media/luckfox/src/luckfox_pwm.c) |
+| C源代码示例 | [media/luckfox/examples/luckfox_pwm_test.c](media/luckfox/examples/luckfox_pwm_test.c) |
+
+
 
 ### UART
 
@@ -168,9 +190,29 @@ PWM，全称为脉冲宽度调制（Pulse Width Modulation），是一种通过�
 
 在本仓库中可采用设备文件访问UART，设备路径为/dev/ttySn(其中n为串口号)。
 
+Luckfox提供的库：
+
+| 名称        | 路径                                                         |
+| ----------- | ------------------------------------------------------------ |
+| 头文件      | [media/luckfox/include/luckfox_uart.h](media/luckfox/include/luckfox_uart.h) |
+| C源代码库   | [media/luckfox/src/luckfox_uart.c](media/luckfox/src/luckfox_uart.c) |
+| C源代码示例 | [media/luckfox/examples/luckfox_uart_test.c](media/luckfox/examples/luckfox_uart_test.c) |
+
+
+
 ### ADC
 
 模数转换器在Linux上属于IIO（Industrial I/O）子系统，可通过sysfs访问ADC，路径为/sys/bus/iio/devices/
+
+Luckfox提供的库：
+
+| 名称        | 路径                                                         |
+| ----------- | ------------------------------------------------------------ |
+| 头文件      | [media/luckfox/include/luckfox_adc.h](media/luckfox/include/luckfox_adc.h) |
+| C源代码库   | [media/luckfox/src/luckfox_adc.c](media/luckfox/src/luckfox_adc.c) |
+| C源代码示例 | [media/luckfox/examples/luckfox_adc_test.c](media/luckfox/examples/luckfox_adc_test.c) |
+
+
 
 ### I2C
 
@@ -188,6 +230,16 @@ I2C作为一种总线可挂接多个子设备(各种传感器、OLED显示屏等
 - i2cget
 - i2cset
 
+Luckfox提供的库：
+
+| 名称        | 路径                                                         |
+| ----------- | ------------------------------------------------------------ |
+| 头文件      | [media/luckfox/include/luckfox_i2c.h](media/luckfox/include/luckfox_i2c.h) |
+| C源代码库   | [media/luckfox/src/luckfox_i2c.c](media/luckfox/src/luckfox_i2c.c) |
+| C源代码示例 | [media/luckfox/examples/luckfox_i2c_test.c](media/luckfox/examples/luckfox_i2c_test.c) |
+
+
+
 ### SPI
 
 SPI作为一种总线，可连接多种外设。与I2C不同，无论是否挂接有外设，SPI总线的功能必须在设备树中配置好，当无外设挂接时需要配置为spidev才可通过用户空间访问。
@@ -196,6 +248,16 @@ SPI作为一种总线，可连接多种外设。与I2C不同，无论是否挂�
 
 - sysfs接口：/sys/class/spi_master` 和 `/sys/bus/spi/devices
 - 设备文件接口:/dev/spidevX.Y，其中X表示 SPI 总线编号，Y表示 SPI 设备编号(通常等效于CS片选的编号，如SPI0使用CS0的设备文件名为/dev/spidev0.0)。
+
+Luckfox提供的库：
+
+| 名称        | 路径                                                         |
+| ----------- | ------------------------------------------------------------ |
+| 头文件      | [media/luckfox/include/luckfox_spi.h](media/luckfox/include/luckfox_spi.h) |
+| C源代码库   | [media/luckfox/src/luckfox_spi.c](media/luckfox/src/luckfox_spi.c) |
+| C源代码示例 | [media/luckfox/examples/luckfox_spi_test.c](media/luckfox/examples/luckfox_spi_test.c) |
+
+
 
 # 板级配置
 
