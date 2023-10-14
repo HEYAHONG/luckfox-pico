@@ -280,6 +280,7 @@ Luckfox提供的库：
 - BoardConfig-EMMC-NONE-RV1103_Luckfox_Pico-IPC.mk:适用于Luckfox Pico开发板及其兼容开发板。  
 - BoardConfig-SPI_NAND-NONE-RV1103_Luckfox_Pico_Plus-IPC.mk:适用于Luckfox Pico Plus开发板及其兼容开发板。  
 - BoardConfig-SPI_NAND-NONE-RV1106_Luckfox_Pico_Max-IPC.mk:适用于Luckfox Pico Pro/Max开发板及其兼容开发板。
+- BoardConfig-SPI_NAND-NONE-RV1103_Luckfox_Pico_Plus-HYH_Custom.mk:适用于Luckfox Pico Plus开发板及其兼容开发板。 个人修改版。
 
 ## 配置项
 
@@ -362,6 +363,25 @@ RockChip  将APP安装至OEM分区
 ### RK_ENABLE_ROCKCHIP_TEST
 
 RockChip rockchip_test(其源代码目录为[sysdrv/tools/board/rockchip_test/](sysdrv/tools/board/rockchip_test/))
+
+## BoardConfig-SPI_NAND-NONE-RV1103_Luckfox_Pico_Plus-HYH_Custom.mk
+
+本板级配置由BoardConfig-SPI_NAND-NONE-RV1103_Luckfox_Pico_Plus-IPC.mk修改而来，为符合本人习惯做了如下修改：
+
+- 修改分区配置，将合并原rootfs、oem、userdata为一个分区。
+- 不启用RK_ENABLE_ROCKCHIP_TEST
+
+### 分区
+
+Luckfox pico plus采用128M SPI-Nand作为系统存储，其分区布局如下：
+
+| 起始地址 | 大小                 | 名称    | 说明                                                         |
+| -------- | -------------------- | ------- | ------------------------------------------------------------ |
+| 0x0      | 0x40000(256KBytes)   | env     | 环境变量分区。                                               |
+| 0x40000  | 0x40000(256KBytes)   | idblock |                                                              |
+| 0x80000  | 0x80000(512KBytes)   | u-boot  | U-Boot分区。                                                 |
+| 0x100000 | 0xC00000(12MBytes)   | boot    | 启动分区，通常用于存储由Linux内核与设备树及其它资源（如LOGO）的U-Boot Fit镜像。 |
+| 0xD00000 | 0x7000000(112MBytes) | rootfs  | 根文件系统。默认采用UBIFS。 UBI镜像参数:LEB size=0x1F000(126976),min./max. I/O unit sizes: 2048/2048,name=rootfs |
 
 # 烧录
 
