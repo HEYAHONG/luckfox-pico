@@ -77,7 +77,7 @@ export RK_APP_TYPE=RKIPC_RV1103
 # export RK_APP_IPCWEB_BACKEND=y
 
 # enable install app to oem partition
-export RK_BUILD_APP_TO_OEM_PARTITION=y
+export RK_BUILD_APP_TO_OEM_PARTITION=n
 
 # enable rockchip test
 export RK_ENABLE_ROCKCHIP_TEST=n
