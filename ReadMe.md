@@ -13,11 +13,38 @@
 
 | 路径                         | 说明                                                     |
 | ---------------------------- | -------------------------------------------------------- |
-| [media/](media/)             | Rockchip media库目录，所有与库相关的源代码存放至此目录。 |
+| [media/](media/)             | Rockchip Media库目录，所有与库相关的源代码存放至此目录。 |
 | [project/app/](project/app/) | App目录，所有应用相关源代码存放至此目录。                |
 | [sysdrv/](sysdrv/)           | 系统目录，包含uboot、linux kernel、rootfs的源代码。      |
 
 对于Rockchip media库目录与App目录而言，当其下的目录包含Makefile时会自动进行构建，无需修改其它文件。因此，如要添加一个新的库或者应用，只需要在相应的目录下创建一个子目录并仿造其它库或者应用编写Makefile即可。
+
+### Rockchip Media库目录
+
+此目录包含多Rockchip媒体编解码、ISP等算法相关源代码。对于用户而言，需要先于APP编译的程序均可放置于此目录。
+
+此目录使用make管理构建树，因此对于每一个库而言，都需要有一个自己的Makefile文件，并通过包含（include）[Makefile.param](media/Makefile.param)文件获取参数。
+
+每个库的Makefile需要实现的目标如下：
+
+- all:默认目标，构建库并将构建好的资源（如二进制可执行文件、二进制库、头文件及其它资源文件）复制到RK_MEDIA_OUTPUT变量所指目录。
+- distclean:清理构建。
+- clean:同distclean。
+
+### App目录
+
+此目录包含App应用源代码。对于用户而言，所有应用相关源代码存放至此目录。
+
+此目录使用make管理构建树，因此对于每一个App而言，都需要有一个自己的Makefile文件，并通过包含（include）[Makefile.param](project/app/Makefile.param)文件获取参数。
+
+每个App的Makefile需要实现的目标如下：
+
+- all:默认目标，构建库并将构建好的资源（如二进制可执行文件、二进制库、头文件及其它资源文件）复制到RK_APP_OUTPUT变量所指目录。
+- distclean:清理构建。
+- clean:同distclean。
+- info:显示App信息
+
+App可使用RK_APP_MEDIA_INCLUDE_PATH变量（Rockchip Media库头文件变量）与RK_APP_MEDIA_LIBS_PATH变量（Rockchip Media库库目录变量）来链接Rockchip Media库目录中的库。
 
 ## 编译
 
