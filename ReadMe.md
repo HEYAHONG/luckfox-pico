@@ -39,7 +39,7 @@
 
 每个App的Makefile需要实现的目标如下：
 
-- all:默认目标，构建库并将构建好的资源（如二进制可执行文件、二进制库、头文件及其它资源文件）复制到RK_APP_OUTPUT变量所指目录。
+- all:默认目标，构建App并将构建好的资源（如二进制可执行文件、二进制库、头文件及其它资源文件）复制到RK_APP_OUTPUT变量所指目录。
 - distclean:清理构建。
 - clean:同distclean。
 - info:显示App信息
