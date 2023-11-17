@@ -341,7 +341,7 @@ RockChip Linux内核默认Kconfig配置文件名。Linux源代码目录为[sysdr
 
 ### RK_BUILDROOT_DEFCONFIG
 
-buildroot的默认Kconfig配置文件名。buildroot可作为构建基本root文件系统(可添加一些受buildroot的软件包到rootfs)的工具。相关文件见[sysdrv/tools/board/buildroot/](sysdrv/tools/board/buildroot/),一般情况下，此值不可变，也可使用buildroot官方的一些配置(即buildroot的configs目录原本就有的配置文件)。如需定义新的配置文件，需修改sysdrv/Makefile中buildroot构建目标中的命令,如复制自己的默认配置到即buildroot的configs目录。
+buildroot的默认Kconfig配置文件名。buildroot可作为构建基本root文件系统(可添加一些受buildroot的软件包到rootfs)的工具。相关文件见[sysdrv/tools/board/buildroot/](sysdrv/tools/board/buildroot/),一般情况下，此值不可变，也可使用buildroot官方的一些配置(即buildroot的configs目录原本就有的配置文件)。如需定义新的配置文件，需修改[sysdrv/Makefile](sysdrv/Makefile)中buildroot构建目标中的命令,如复制自己的默认配置到即buildroot的configs目录。
 
 ### RK_KERNEL_DTS
 
