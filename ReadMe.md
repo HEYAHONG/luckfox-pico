@@ -4,8 +4,8 @@
 
 原版说明如下：
 
-- [readme_cn]( project/readme_cn.txt)
-- [readme_en]( project/readme_en.txt)
+- [README_CN.md]( OFFICAL_README_CN.md)
+- [README.md]( OFFICAL_README.md)
 
 官方WIKI：https://wiki.luckfox.com/zh/Luckfox-Pico/Luckfox-Pico-quick-start
 
