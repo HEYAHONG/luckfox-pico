@@ -24,6 +24,9 @@ export RK_KERNEL_DEFCONFIG=luckfox_rv1106_linux_defconfig
 # Kernel dts
 export RK_KERNEL_DTS=rv1103g-luckfox-pico-plus.dts
 
+# Buildroot defconfig
+export RK_BUILDROOT_DEFCONFIG=luckfox_pico_defconfig
+
 #misc image
 export RK_MISC=wipe_all-misc.img
 
@@ -72,6 +75,9 @@ export RK_PARTITION_FS_TYPE_CFG=rootfs@IGNORE@ubifs
 # app config
 export RK_APP_TYPE=RKIPC_RV1103
 # export RK_APP_TYPE=RKIPC_RV1106
+
+# specify post.sh for delete/overlay files
+export RK_PRE_BUILD_OEM_SCRIPT=rv1103-spi_nor-post.sh
 
 # build ipc web backend
 # export RK_APP_IPCWEB_BACKEND=y

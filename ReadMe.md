@@ -339,6 +339,10 @@ RockChip Uboot的默认Kconfig配置文件名(分片)，通常用于配置启动
 
 RockChip Linux内核默认Kconfig配置文件名。Linux源代码目录为[sysdrv/source/kernel/](sysdrv/source/kernel/)，本仓库默认Kconfig配置文件目录为[sysdrv/source/kernel/arch/arm/configs/](sysdrv/source/kernel/arch/arm/configs/)。
 
+### RK_BUILDROOT_DEFCONFIG
+
+buildroot的默认Kconfig配置文件名。buildroot可作为构建基本root文件系统(可添加一些受buildroot的软件包到rootfs)的工具。相关文件见[sysdrv/tools/board/buildroot/](sysdrv/tools/board/buildroot/),一般情况下，此值不可变，也可使用buildroot官方的一些配置(即buildroot的configs目录原本就有的配置文件)。如需定义新的配置文件，需修改sysdrv/Makefile中buildroot构建目标中的命令,如复制自己的默认配置到即buildroot的configs目录。
+
 ### RK_KERNEL_DTS
 
 RockChip Linux内核的设备树文件名。Linux源代码目录为[sysdrv/source/kernel/](sysdrv/source/kernel/)，本仓库设备树目录为[sysdrv/source/kernel/arch/arm/boot/dts/](sysdrv/source/kernel/arch/arm/boot/dts/)。
@@ -378,6 +382,10 @@ RockChip ubifs文件系统压缩设置。
 ### RK_APP_TYPE
 
 RockChip  APP类型。APP类型的配置的使用可参见[project/app/rkipc/Makefile](project/app/rkipc/Makefile)。
+
+### RK_PRE_BUILD_OEM_SCRIPT
+
+构建OEM前脚本，见project/build.sh。脚本目录同板级配置目录(即[project/cfg/BoardConfig_IPC](project/cfg/BoardConfig_IPC))
 
 ### RK_APP_IPCWEB_BACKEND
 
