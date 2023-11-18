@@ -385,7 +385,7 @@ Linux源代码目录为[sysdrv/source/kernel/](sysdrv/source/kernel/)，本仓�
 
 buildroot的默认Kconfig配置文件名。
 
-buildroot可作为构建基本rootfs文件系统(可添加一些受buildroot的软件包到rootfs)的工具,其官网为https://buildroot.org/。
+buildroot可作为构建基本rootfs文件系统(可添加一些受buildroot的软件包到rootfs)的工具,其官网为[https://buildroot.org/](https://buildroot.org/)。
 
 相关文件见[sysdrv/tools/board/buildroot/](sysdrv/tools/board/buildroot/),一般情况下，此值不可变，也可使用buildroot官方的一些配置(即buildroot的configs目录原本就有的配置文件)。
 
