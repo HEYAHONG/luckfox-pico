@@ -75,9 +75,43 @@ App可使用RK_APP_MEDIA_INCLUDE_PATH变量（Rockchip Media库头文件变量�
 
 主要支持的开发板如下：
 
+- Luckfox Pico Mini A
+- Luckfox Pico Mini B
 - LuckFox Pico
 - LuckFox Pico Plus
 - LuckFox Pico Pro/Max
+
+## Luckfox Pico Mini A
+
+### 硬件
+
+Luckfox Pico Mini A是由[微雪电子](https://www.waveshare.net/)(代理[Luckfox](https://www.luckfox.com))出品的RV1103开发板，其具有64M RAM。采用SD卡启动。
+
+![LUCKFOX-PICO-MINI-GPIO](doc/LUCKFOX-PICO-MINI-GPIO.png)
+
+### 固件
+
+本仓库支持Luckfox Pico Mini A的板级配置如下：
+
+-  BoardConfig-EMMC-NONE-RV1103_Luckfox_Pico_Mini_A-IPC.mk
+
+
+
+## Luckfox Pico Mini B
+
+### 硬件
+
+Luckfox Pico Mini B是由[微雪电子](https://www.waveshare.net/)(代理[Luckfox](https://www.luckfox.com))出品的RV1103开发板，其具有64M RAM及128M SPI-Nand。 
+
+![LUCKFOX-PICO-MINI-GPIO](doc/LUCKFOX-PICO-MINI-GPIO.png)
+
+
+
+### 固件
+
+本仓库支持Luckfox Pico Mini B的板级配置如下：
+
+-  BoardConfig-SPI_NAND-NONE-RV1103_Luckfox_Pico_Mini_B-IPC.mk
 
 ## LuckFox Pico
 
@@ -127,7 +161,7 @@ Luckfox Pico Pro具有128M RAM。Luckfox Pico Max具有256M RAM。
 
 本仓库支持Luckfox Pico Pro/Max的板级配置如下：
 
-- BoardConfig-SPI_NAND-NONE-RV1106_Luckfox_Pico_Max-IPC.mk
+- BoardConfig-SPI_NAND-NONE-RV1106_Luckfox_Pico_Pro_Max-IPC.mk
 
 
 
@@ -325,23 +359,39 @@ RockChip交叉编译工具链，由于本仓库包含交叉编译工具链，故
 
 ### RK_BOOT_MEDIUM
 
-RockChip启动介质，可选项为emmc/spi_nor/spi_nand。Luckfox Pico根据配置的不同可选emmc与spi_nand。
+RockChip启动介质，可选项为emmc/spi_nor/spi_nand。
+
+Luckfox Pico根据配置的不同可选emmc与spi_nand。
 
 ### RK_UBOOT_DEFCONFIG
 
-RockChip Uboot的默认Kconfig配置文件名。Uboot源代码目录为[sysdrv/source/uboot/u-boot/](sysdrv/source/uboot/u-boot/)，Uboot的Kconfig默认配置目录为[sysdrv/source/uboot/u-boot/configs/](sysdrv/source/uboot/u-boot/configs/)。
+RockChip Uboot的默认Kconfig配置文件名。
+
+Uboot源代码目录为[sysdrv/source/uboot/u-boot/](sysdrv/source/uboot/u-boot/)，Uboot的Kconfig默认配置目录为[sysdrv/source/uboot/u-boot/configs/](sysdrv/source/uboot/u-boot/configs/)。
 
 ### RK_UBOOT_DEFCONFIG_FRAGMENT
 
-RockChip Uboot的默认Kconfig配置文件名(分片)，通常用于配置启动介质。Uboot源代码目录为[sysdrv/source/uboot/u-boot/](sysdrv/source/uboot/u-boot/)，Uboot的Kconfig默认配置目录为[sysdrv/source/uboot/u-boot/configs/](sysdrv/source/uboot/u-boot/configs/)。
+RockChip Uboot的默认Kconfig配置文件名(分片)，通常用于配置启动介质。
+
+Uboot源代码目录为[sysdrv/source/uboot/u-boot/](sysdrv/source/uboot/u-boot/)，Uboot的Kconfig默认配置目录为[sysdrv/source/uboot/u-boot/configs/](sysdrv/source/uboot/u-boot/configs/)。
 
 ### RK_KERNEL_DEFCONFIG
 
-RockChip Linux内核默认Kconfig配置文件名。Linux源代码目录为[sysdrv/source/kernel/](sysdrv/source/kernel/)，本仓库默认Kconfig配置文件目录为[sysdrv/source/kernel/arch/arm/configs/](sysdrv/source/kernel/arch/arm/configs/)。
+RockChip Linux内核默认Kconfig配置文件名。
+
+Linux源代码目录为[sysdrv/source/kernel/](sysdrv/source/kernel/)，本仓库默认Kconfig配置文件目录为[sysdrv/source/kernel/arch/arm/configs/](sysdrv/source/kernel/arch/arm/configs/)。
 
 ### RK_BUILDROOT_DEFCONFIG
 
-buildroot的默认Kconfig配置文件名。buildroot可作为构建基本root文件系统(可添加一些受buildroot的软件包到rootfs)的工具。相关文件见[sysdrv/tools/board/buildroot/](sysdrv/tools/board/buildroot/),一般情况下，此值不可变，也可使用buildroot官方的一些配置(即buildroot的configs目录原本就有的配置文件)。如需定义新的配置文件，需修改[sysdrv/Makefile](sysdrv/Makefile)中buildroot构建目标中的命令,如复制自己的默认配置到即buildroot的configs目录。
+buildroot的默认Kconfig配置文件名。
+
+buildroot可作为构建基本rootfs文件系统(可添加一些受buildroot的软件包到rootfs)的工具,其官网为https://buildroot.org/。
+
+相关文件见[sysdrv/tools/board/buildroot/](sysdrv/tools/board/buildroot/),一般情况下，此值不可变，也可使用buildroot官方的一些配置(即buildroot的configs目录原本就有的配置文件)。
+
+如需定义新的配置文件，需修改[sysdrv/Makefile](sysdrv/Makefile)中buildroot构建目标中的命令,如复制自己的默认配置到buildroot的configs目录。
+
+buildroot可用于编译依赖较多的软件包，当用户的App依赖较多的成熟软件库时，可尝试在buildroot的默认配置文件启用它们，而不是一个一个下载并添加到Rockchip Media库目录。
 
 ### RK_KERNEL_DTS
 
@@ -381,15 +431,21 @@ RockChip ubifs文件系统压缩设置。
 
 ### RK_APP_TYPE
 
-RockChip  APP类型。APP类型的配置的使用可参见[project/app/rkipc/Makefile](project/app/rkipc/Makefile)。
+RockChip  APP类型。
+
+APP类型的配置的使用可参见[project/app/rkipc/Makefile](project/app/rkipc/Makefile)。
 
 ### RK_PRE_BUILD_OEM_SCRIPT
 
-构建OEM前脚本，见project/build.sh。脚本目录同板级配置目录(即[project/cfg/BoardConfig_IPC](project/cfg/BoardConfig_IPC))
+构建OEM前脚本，见project/build.sh。
+
+脚本目录同板级配置目录(即[project/cfg/BoardConfig_IPC](project/cfg/BoardConfig_IPC))
 
 ### RK_APP_IPCWEB_BACKEND
 
-RockChip  APP IPC web后台。APP IPC web后台配置的使用可参见[project/app/ipcweb/Makefile](project/app/ipcweb/Makefile)。
+RockChip  APP IPC web后台。
+
+APP IPC web后台配置的使用可参见[project/app/ipcweb/Makefile](project/app/ipcweb/Makefile)。
 
 ### RK_BUILD_APP_TO_OEM_PARTITION
 
