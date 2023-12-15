@@ -345,6 +345,14 @@ Luckfox提供的库：
 
 ## 配置项
 
+### LF_TARGET_ROOTFS
+
+目标根文件系统，可选值如下：
+
+- ubuntu:采用预先准备好的ubuntu根文件系统，由于ubuntu占用空间较大，故而只支持EMMC（SD卡）。
+- buildroot:采用buildroot制作根文件系统。
+- busybox:编译busybox，采用SDK内部的方式制作根文件系统。
+
 ### RK_ARCH
 
 RockChip架构，本仓库固定为arm。
@@ -455,9 +463,9 @@ RockChip  将APP安装至OEM分区
 
 RockChip rockchip_test(其源代码目录为[sysdrv/tools/board/rockchip_test/](sysdrv/tools/board/rockchip_test/))
 
-## BoardConfig-SPI_NAND-NONE-RV1103_Luckfox_Pico_Plus-HYH_Custom.mk
+## BoardConfig-SPI_NAND-Buildroot-RV1103_Luckfox_Pico_Plus-HYH_Custom.mk
 
-本板级配置由BoardConfig-SPI_NAND-NONE-RV1103_Luckfox_Pico_Plus-IPC.mk修改而来，为符合本人习惯做了如下修改：
+本板级配置由BoardConfig-SPI_NAND-Buildroot-RV1103_Luckfox_Pico_Plus-IPC.mk修改而来，为符合本人习惯做了如下修改：
 
 - 修改分区配置，将合并原rootfs、oem、userdata数据为一个分区,关闭oem单独分区。
 - 不启用RK_ENABLE_ROCKCHIP_TEST
