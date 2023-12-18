@@ -93,7 +93,8 @@ Luckfox Pico Mini A是由[微雪电子](https://www.waveshare.net/)(代理[Luckf
 
 本仓库支持Luckfox Pico Mini A的板级配置如下：
 
--  BoardConfig-EMMC-NONE-RV1103_Luckfox_Pico_Mini_A-IPC.mk
+-  BoardConfig-EMMC-Buildroot-RV1103_Luckfox_Pico_Mini_A-IPC.mk
+-  BoardConfig-EMMC-Ubuntu-RV1103_Luckfox_Pico_Mini_A-IPC.mk
 
 
 
@@ -111,7 +112,7 @@ Luckfox Pico Mini B是由[微雪电子](https://www.waveshare.net/)(代理[Luckf
 
 本仓库支持Luckfox Pico Mini B的板级配置如下：
 
--  BoardConfig-SPI_NAND-NONE-RV1103_Luckfox_Pico_Mini_B-IPC.mk
+-  BoardConfig-SPI_NAND-Buildroot-RV1103_Luckfox_Pico_Mini_B-IPC.mk
 
 ## LuckFox Pico
 
@@ -125,7 +126,8 @@ Luckfox Pico是由[微雪电子](https://www.waveshare.net/)(代理[Luckfox](htt
 
 本仓库支持Luckfox Pico的板级配置如下：
 
--  BoardConfig-EMMC-NONE-RV1103_Luckfox_Pico-IPC.mk
+-  BoardConfig-EMMC-Buildroot-RV1103_Luckfox_Pico-IPC.mk
+-  BoardConfig-EMMC-Ubuntu-RV1103_Luckfox_Pico-IPC.mk
 
 
 
@@ -143,7 +145,8 @@ Luckfox Pico Plus是由[微雪电子](https://www.waveshare.net/)(代理[Luckfox
 
 本仓库支持Luckfox Pico Plus的板级配置如下：
 
--  BoardConfig-SPI_NAND-NONE-RV1103_Luckfox_Pico_Plus-IPC.mk
+-  BoardConfig-EMMC-Ubuntu-RV1103_Luckfox_Pico_Plus-IPC.mk
+-  BoardConfig-SPI_NAND-Buildroot-RV1103_Luckfox_Pico_Plus-IPC.mk
 
 
 
@@ -161,7 +164,8 @@ Luckfox Pico Pro具有128M RAM。Luckfox Pico Max具有256M RAM。
 
 本仓库支持Luckfox Pico Pro/Max的板级配置如下：
 
-- BoardConfig-SPI_NAND-NONE-RV1106_Luckfox_Pico_Pro_Max-IPC.mk
+- BoardConfig-EMMC-Ubuntu-RV1106_Luckfox_Pico_Pro_Max-IPC.mk
+- BoardConfig-SPI_NAND-Buildroot-RV1106_Luckfox_Pico_Pro_Max-IPC.mk
 
 
 
